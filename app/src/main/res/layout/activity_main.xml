@@ -55,5 +55,15 @@
         android:layout_below="@+id/numberEditText"
         android:layout_centerHorizontal="true" />
 
+    <Button
+        android:onClick="viewDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View All Details"
+        android:id="@+id/buttonDetails"
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"/>
+
 
 </RelativeLayout>

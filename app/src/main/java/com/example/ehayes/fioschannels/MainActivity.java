@@ -1,14 +1,9 @@
 package com.example.ehayes.fioschannels;
 
 import android.app.Activity;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 
@@ -16,6 +11,7 @@ public class MainActivity extends Activity {
 
     EditText name,number;
     SQLiteAdapter helper;
+    Button addDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +20,7 @@ public class MainActivity extends Activity {
 
         name = (EditText) findViewById(R.id.nameEditText);
         number = (EditText) findViewById(R.id.numberEditText);
+
         helper = new SQLiteAdapter(this);
 
     }
@@ -43,5 +40,11 @@ public class MainActivity extends Activity {
 
         name.setText("");
         number.setText("");
+    }
+
+    public void viewDetails(View view){
+        String data = helper.getAllData();
+        Message.message(this,data);
+
     }
 }
